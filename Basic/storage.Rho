@@ -1,0 +1,14 @@
+new return, store in {
+    contract Store(value, return) = {
+        new storedValue in {
+            *storedValue := value |
+            return!(true)
+        }
+    } |
+    contract Get(return) = {
+        new value in {
+            storedValue!(value) |
+            return!(*value)
+        }
+    }
+}
